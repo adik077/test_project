@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    {% for product in products %}
-        {{ product.product_name }} - Added by: {{ product.user }}<br>
-    {% endfor %}
+{% block title %}Main list{% endblock %}
+{% block body %}
 
-<a href="{% url 'add_products' %}">Add one...</a>
-</body>
-</html>
+        {% for product in products %}
+            {{ product.product_name }} - Added by: {{ product.user }}<br>
+        {% endfor %}
+
+    <a href="{% url 'add_products' %}">Add one...</a>
+
+{% endblock %}
